@@ -1,29 +1,68 @@
 #include <stdio.h>
 #include <string.h>
-
-int main() {
-    char str[101];
-    scanf("%s", str);
-
-    int count = 0;
-    for (int i = 0; str[i] != '\0'; i++) {
-        if (str[i] == 'c') {
-            if (str[i+1] == '=' || str[i+1] == '-') i++;
-        } else if (str[i] == 'd') {
-            if (str[i+1] == 'z' && str[i+2] == '=') i += 2;
-            else if (str[i+1] == '-') i++;
-        } else if (str[i] == 'l' && str[i+1] == 'j') {
-            i++;
-        } else if (str[i] == 'n' && str[i+1] == 'j') {
-            i++;
-        } else if (str[i] == 's' && str[i+1] == '=') {
-            i++;
-        } else if (str[i] == 'z' && str[i+1] == '=') {
-            i++;
+int main(){
+    int count=0;
+    char sentence[101];
+    
+    scanf("%s", sentence);
+    for(int i=0; i<strlen(sentence); i++){
+        if(sentence[i] == 'c'){
+            if(sentence[i+1] == '='){
+                count++;
+                i++;
+            }
+            else if(sentence[i+1] == '-'){
+                count++;
+                i++;
+            }
+            else count++;
         }
-        count++;
+        else if(sentence[i] == 'd'){
+            if(sentence[i+1] == 'z'){
+                if(sentence[i+2] == '='){
+                    count++;
+                    i += 2;
+                }
+                else count++;
+            }
+            else if(sentence[i+1] == '-'){
+                count++;
+                i++;
+            }
+            else count++;
+        }
+        else if(sentence[i] == 'l'){
+            if(sentence[i+1] == 'j'){
+                count++;
+                i++;
+            }
+            else count++;
+        }
+        else if(sentence[i] == 'n'){
+            if(sentence[i+1] == 'j'){
+                count++;
+                i++;
+            }
+            else count++;
+        }
+        else if(sentence[i] == 's'){
+            if(sentence[i+1] == '='){
+                count++;
+                i++;
+            }
+            else count++;
+        }
+        else if(sentence[i] == 'z'){
+            if(sentence[i+1] == '='){
+                count++;
+                i++;
+            }
+            else count++;
+        }
+        else count++;
     }
-
-    printf("%d\n", count);
+    
+    printf("%d", count);
+    
     return 0;
 }
