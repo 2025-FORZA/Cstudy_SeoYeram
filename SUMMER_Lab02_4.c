@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <string.h>
+#include <string.h> 
 int main(){
     int count=0;
     char sentence[101];
@@ -66,3 +66,4 @@ int main(){
     
     return 0;
 }
+
