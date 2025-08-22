@@ -1,22 +1,37 @@
 #include <stdio.h>
-
-int main() {
-    char str[16];
-    scanf("%s", str);
-
-    int time = 0;
-
-    for (int i = 0; str[i] != '\0'; i++) {
-        if (str[i] >= 'A' && str[i] <= 'C') time += 3;
-        else if (str[i] >= 'D' && str[i] <= 'F') time += 4;
-        else if (str[i] >= 'G' && str[i] <= 'I') time += 5;
-        else if (str[i] >= 'J' && str[i] <= 'L') time += 6;
-        else if (str[i] >= 'M' && str[i] <= 'O') time += 7;
-        else if (str[i] >= 'P' && str[i] <= 'S') time += 8;
-        else if (str[i] >= 'T' && str[i] <= 'V') time += 9;
-        else if (str[i] >= 'W' && str[i] <= 'Z') time += 10;
-    }
-
-    printf("%d\n", time);
+#include <string.h>
+int main(){
+    int count = 0;
+    char sentence[16];
+    
+    scanf("%s", sentence);
+    for(int i=0; i<strlen(sentence); i++){
+        if(sentence[i] == 'A' || sentence[i] == 'B' || sentence[i] == 'C'){
+            count += 3;
+        }
+        else if(sentence[i] == 'D' || sentence[i] == 'E' || sentence[i] == 'F'){
+            count += 4;
+        }
+        else if(sentence[i] == 'G' || sentence[i] == 'H' || sentence[i] == 'I'){
+            count += 5;
+        }
+        else if(sentence[i] == 'J' || sentence[i] == 'K' || sentence[i] == 'L'){
+            count += 6;
+        }
+        else if(sentence[i] == 'M' || sentence[i] == 'N' || sentence[i] == 'O'){
+            count += 7;
+        }
+        else if(sentence[i] == 'P' || sentence[i] == 'Q' || sentence[i] == 'R' || sentence[i] == 'S'){
+            count += 8;
+        }
+        else if(sentence[i] == 'T' || sentence[i] == 'U' || sentence[i] == 'V'){
+            count += 9;
+        }
+        else if(sentence[i] == 'W' || sentence[i] == 'X' || sentence[i] == 'Y' || sentence[i] == 'Z'){
+            count += 10;
+        }
+    }    
+    
+    printf("%d", count);
     return 0;
 }
